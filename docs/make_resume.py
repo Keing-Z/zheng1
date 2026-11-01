@@ -105,7 +105,7 @@ def section_title(text):
 
 
 # ================= 头部 =================
-para("KeingZheng", size=22, bold=True, space_after=2)
+para("Keing", size=22, bold=True, space_after=2)
 para("数据科学与大数据技术 · 本科在读 · 专业排名前 20%", size=10.5, color=MUTED, space_after=2)
 para("福建农林大学　|　邮箱：2776599149@qq.com　|　GitHub：github.com/Keing-Z",
      size=9, color=MUTED, space_after=4)

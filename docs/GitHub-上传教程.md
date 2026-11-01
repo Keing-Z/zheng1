@@ -1,4 +1,4 @@
-# 把作品集传到 GitHub（手把手版）
+﻿# 把作品集传到 GitHub（手把手版）
 
 不用记命令，按顺序点就行。**预计 10 分钟。**
 
@@ -122,7 +122,7 @@ https://github.com/Keing-Z/zheng1
 https://github.com/Keing-Z/zheng1
 ```
 
-**个人信息我已经全部填好了**（姓名 KeingZheng、邮箱 2776599149@qq.com、GitHub 用户名 Keing-Z），你不用再改任何占位符。
+**个人信息我已经全部填好了**（姓名 Keing、邮箱 2776599149@qq.com、GitHub 用户名 Keing-Z），你不用再改任何占位符。
 
 ---
 

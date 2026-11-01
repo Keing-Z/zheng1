@@ -1,4 +1,4 @@
-# Hi, I'm KeingZheng — Data Science & Automation
+﻿# Hi, I'm Keing — Data Science & Automation
 
 Undergraduate in **Data Science and Big Data Technology** at Fujian Agriculture and Forestry
 University (top 20% of major). I build things end-to-end: from data collection and cleaning
