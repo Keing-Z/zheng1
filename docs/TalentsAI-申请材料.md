@@ -9,7 +9,7 @@
 上传 GitHub 后，填这个：
 
 ```
-https://github.com/[你的GitHub用户名]/portfolio
+https://github.com/Keing-Z/zheng1
 ```
 
 > ⚠️ **必须先完成上传再填。** 审核员会点开这个链接，如果打不开或仓库是空的，大概率直接驳回。
@@ -23,7 +23,7 @@ https://github.com/[你的GitHub用户名]/portfolio
 **上传前必须改这两处**：
 
 - 第 1 行进 `[你的姓名]` → 换成你的真名
-- 倒数第 3 段 `your@email.com` 和 `github.com/[你的用户名]` → 换成你自己的
+- 倒数第 3 段 `2776599149@qq.com` 和 `github.com/Keing-Z` → 换成你自己的
 
 ---
 

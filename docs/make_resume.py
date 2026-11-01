@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """生成个人简历（DOCX），用于 TalentsAI 资质申请上传（平台支持 DOC/DOCX/PDF）。"""
 import os
 from docx import Document
@@ -105,9 +105,9 @@ def section_title(text):
 
 
 # ================= 头部 =================
-para("[你的姓名]", size=22, bold=True, space_after=2)
+para("KeingZheng", size=22, bold=True, space_after=2)
 para("数据科学与大数据技术 · 本科在读 · 专业排名前 20%", size=10.5, color=MUTED, space_after=2)
-para("福建农林大学　|　邮箱：your@email.com　|　GitHub：github.com/[你的用户名]",
+para("福建农林大学　|　邮箱：2776599149@qq.com　|　GitHub：github.com/Keing-Z",
      size=9, color=MUTED, space_after=4)
 
 # ================= 教育背景 =================
@@ -173,7 +173,7 @@ rich([("中文　", True, INK), ("母语　　　", False, INK),
 
 # ================= 说明 =================
 section_title("补充说明")
-para("项目源代码与详细文档见 GitHub 仓库：[链接]。各项目 README 均完整记录了设计取舍、"
+para("项目源代码与详细文档见 GitHub 仓库：github.com/Keing-Z/zheng1。各项目 README 均完整记录了设计取舍、"
      "技术权衡与已知限制。", size=9, color=MUTED)
 
 doc.save(DOCX)

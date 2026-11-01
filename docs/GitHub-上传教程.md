@@ -4,42 +4,36 @@
 
 ---
 
-## 第 0 步：确认账号
+## 第 0 步：确认账号和仓库
 
-如果你还没有 GitHub 账号：
+**你的账号已确认：**
 
-1. 打开 https://github.com
-2. 点右上角 **Sign up**
-3. 填邮箱、密码、用户名（**用户名会出现在链接里，想好再定**，比如 `keing-z`）
-4. 邮箱收验证码，完成验证
+- GitHub 用户名：`Keing-Z`
+- 邮箱：`2776599149@qq.com`
+- 仓库：`zheng1`
 
-> 用户名建议用**英文或拼音**，不要用中文——链接里会带中文，别人点开容易出问题。
+**先做一件事**：在浏览器打开 https://github.com/Keing-Z/zheng1 ，确认：
 
----
+- [ ] 能打开（不是 404）
+- [ ] 仓库是 **Public（公开）** —— 在页面标题下方能看到 "Public" 标签
 
-## 第 1 步：新建仓库
-
-1. 登录后，点右上角的 **`+`** → **New repository**
-2. 填写：
-   - **Repository name**：`portfolio`
-   - **Description**：`Data science & automation projects`
-   - **Visibility**：选 **Public** ⚠️（**必须公开**，私有仓库审核员打不开）
-3. **不要**勾选 "Add a README file"（我们已经有 README 了）
-4. 点绿色按钮 **Create repository**
-
-建好后会跳到一个空仓库页面，先放着别动。
+> ⚠️ 如果显示 **Private**，一定要改成公开：进入仓库 → **Settings** → 最下方 **Danger Zone** → **Change visibility** → **Change to public**。
+> 私有仓库审核员点开是 403，等于没交。
 
 ---
 
-## 第 2 步：上传文件（网页拖拽，最简单）
+## 第 1 步：进入上传页面
 
-在空仓库页面，找到这一行：
+在仓库页面（`zheng1`）点击 **Add file** → **Upload files**。
 
-> **`uploading an existing file`**
+如果仓库是空的，页面上会直接显示 **`uploading an existing file`**，点它也行。
 
-点它，进入上传页。
 
-### 关键：上传整个文件夹
+---
+
+## 第 2 步：拖入文件
+
+### 关键：拖文件夹里面的内容，不是文件夹本身
 
 打开文件资源管理器，进入：
 
@@ -104,7 +98,7 @@ quick-capture-extension/
 打开这个地址（替换你的用户名）：
 
 ```
-https://github.com/[你的用户名]/portfolio
+https://github.com/Keing-Z/zheng1
 ```
 
 **必须确认这几件事**：
@@ -118,33 +112,30 @@ https://github.com/[你的用户名]/portfolio
 
 ---
 
-## 第 4 步：替换个人信息
+## 第 4 步：确认仓库名是 zheng1
 
-仓库里还有两处占位符要改：
+你已经有仓库 `zheng1` 了，所以**不需要新建**，直接往 `zheng1` 里传。
 
-### ① README 里的
+传完之后地址是：
 
-点开 `README.md`，点右上角的**铅笔图标**编辑，改这两处：
+```
+https://github.com/Keing-Z/zheng1
+```
 
-- 第一行 `[Your Name]` → 你的名字（拼音或英文名都行）
-- 最后的 `@your-handle` 和 `your@email.com`
-
-改完点 **Commit changes**。
-
-### ② 简历里的
-
-`resume.docx` 我生成的版本里也有占位符（`[你的姓名]`、`your@email.com`）。
-
-**推荐做法**：下载下来，用 Word 改完，再重新上传覆盖。
-
-或者告诉我你要填的名字和邮箱，**我重新生成一份给你**，更省事。
+**个人信息我已经全部填好了**（姓名 KeingZheng、邮箱 2776599149@qq.com、GitHub 用户名 Keing-Z），你不用再改任何占位符。
 
 ---
 
 ## 常见问题
 
+**Q：我本地文件夹叫 `portfolio`，和仓库名 `zheng1` 不一样，有影响吗？**
+A：没有。文件夹名是本地的，仓库名是 GitHub 上的，两者无关。推送时以仓库为准。
+
 **Q：仓库只能是 Public 吗？**
 A：是。**Private 仓库审核员点开是 403**，等于没交。
+
+**Q：如果 `zheng1` 仓库已经有东西了怎么办？**
+A：网页上传会**追加**文件，不会覆盖。只要确认没有同名的 `README.md` 冲突即可。如果有冲突，GitHub 会让你选择保留哪个。
 
 **Q：上传后中文显示乱码？**
 A：不会。我写文件时用的都是 UTF-8。
@@ -166,7 +157,7 @@ A：告诉 git 哪些文件不要传（比如 `__pycache__`、`node_modules`）�
 
 | 项 | 填什么 |
 |---|---|
-| 过往个人代码仓链接 | `https://github.com/[你的用户名]/portfolio` |
+| 过往个人代码仓链接 | `https://github.com/Keing-Z/zheng1` |
 | 个人简历 | 上传改好的 `resume.docx` |
 | 个人介绍 | 复制 `TalentsAI-申请材料.md` 里第 ③ 段 |
 | 补充说明 | 复制 `TalentsAI-申请材料.md` 里第 ④ 段 |

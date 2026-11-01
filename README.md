@@ -1,4 +1,4 @@
-﻿# Hi, I'm [Your Name] — Data Science & Automation
+# Hi, I'm KeingZheng — Data Science & Automation
 
 Undergraduate in **Data Science and Big Data Technology** at Fujian Agriculture and Forestry
 University (top 20% of major). I build things end-to-end: from data collection and cleaning
@@ -92,8 +92,8 @@ No network permissions. The extension never uploads anything.
 
 ## Contact
 
-- GitHub: [@your-handle](https://github.com/your-handle)
-- Email: [your@email.com]
+- GitHub: [@Keing-Z](https://github.com/Keing-Z)
+- Email: 2776599149@qq.com
 
 ---
 
