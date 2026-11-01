@@ -1,0 +1,83 @@
+<view class="page">
+
+  <!-- 连续记账卡 -->
+  <view class="streak-card">
+    <view class="sc-left">
+      <text class="sc-num">{{streakDays}}</text>
+      <text class="sc-unit">天</text>
+    </view>
+    <view class="sc-right">
+      <text class="sc-title">连续记账</text>
+      <text class="sc-sub">{{todayDone ? '今天已记，继续保持 🔥' : '今天还没记，记一笔别断哦'}}</text>
+    </view>
+  </view>
+
+  <!-- 预算设置 -->
+  <view class="card">
+    <view class="between">
+      <text class="title">本月预算</text>
+      <text class="muted">{{budgetText}}</text>
+    </view>
+
+    <view class="budget-input-row">
+      <text class="bi-cur">¥</text>
+      <input
+        class="bi-input"
+        type="digit"
+        placeholder="设置一个每月预算，超支就标红"
+        placeholder-class="bi-ph"
+        value="{{budgetDraft}}"
+        bindinput="onBudgetInput"
+      />
+      <view class="bi-save" bindtap="onSaveBudget">保存</view>
+    </view>
+
+    <view wx:if="{{budget.level !== 'none'}}" class="bstat {{budget.level}}">
+      <view class="between">
+        <text>已花 ¥{{spentText}} / 预算 ¥{{budgetYuan}}</text>
+        <text class="bstat-pct">{{budget.pct}}%</text>
+      </view>
+      <view class="bar"><view class="bar-in" style="width:{{barWidth}}%"></view></view>
+      <text wx:if="{{budget.over}}" class="bstat-warn">已超支 ¥{{overText}}，这个月收着点用</text>
+      <text wx:elif="{{budget.level === 'warn'}}" class="bstat-warn">接近预算了，还剩 ¥{{remainText}}</text>
+    </view>
+  </view>
+
+  <!-- 成就 -->
+  <view class="card">
+    <view class="between" style="margin-bottom: 20rpx">
+      <text class="title">成就</text>
+      <text class="muted">已解锁 {{unlockedCount}}/{{achList.length}}</text>
+    </view>
+
+    <view wx:for="{{achList}}" wx:key="id" class="ach {{item.unlocked ? 'on' : ''}}">
+      <view class="ach-ico">{{item.unlocked ? '🏅' : '🔒'}}</view>
+      <view class="ach-main">
+        <view class="between">
+          <text class="ach-title">{{item.title}}</text>
+          <text class="ach-cur">{{item.cur}}/{{item.goal}}</text>
+        </view>
+        <view class="ach-bar">
+          <view class="ach-in" style="width:{{item.progress}}%"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据管理 -->
+  <view class="card">
+    <text class="title">数据</text>
+    <text class="muted block" style="margin: 10rpx 0 20rpx">
+      共 {{totalRecords}} 笔记录，全部存在本机。换手机前记得先导出备份。
+    </text>
+    <view class="btns">
+      <view class="btn-ghost bt" bindtap="onExport">导出备份</view>
+      <view class="btn-ghost bt" bindtap="onHowToImport">从备份恢复</view>
+    </view>
+    <text class="muted block" style="margin-top: 14rpx; font-size: 22rpx">
+      恢复方法：先复制之前导出的备份文本，再点「从备份恢复」。
+    </text>
+  </view>
+
+  <view class="foot">记账 · 只存本机，不上传</view>
+</view>

@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# WeChat DevTools
+project.private.config.json
+miniprogram_npm/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local build output
+dist/
+build/
+*.zip
+sourcemap.zip
+
+# Large local data (keep the curated dataset in the repo, ignore raw drops)
+mushroom-classification/data/*.xlsx

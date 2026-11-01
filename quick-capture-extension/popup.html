@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quick Capture</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>Quick Capture</h1>
+    <p class="sub">Capture data from this page</p>
+  </header>
+
+  <section class="field">
+    <label for="preset">Capture type</label>
+    <select id="preset">
+      <option value="headings">Headings (h1–h3)</option>
+      <option value="links">Links + text</option>
+      <option value="tables">First table → rows</option>
+      <option value="selected">Selected text</option>
+      <option value="custom">Custom selector…</option>
+    </select>
+  </section>
+
+  <section class="field hidden" id="customWrap">
+    <label for="customSel">CSS selector</label>
+    <input id="customSel" type="text" placeholder="e.g. .product .title" />
+    <label for="customAttr" class="inline">
+      <span>Attribute (optional)</span>
+      <input id="customAttr" type="text" placeholder="e.g. href" />
+    </label>
+  </section>
+
+  <section class="field">
+    <label>Output format</label>
+    <div class="radio-row">
+      <label class="radio"><input type="radio" name="fmt" value="text" checked /> Text</label>
+      <label class="radio"><input type="radio" name="fmt" value="json" /> JSON</label>
+      <label class="radio"><input type="radio" name="fmt" value="csv" /> CSV</label>
+    </div>
+  </section>
+
+  <button id="capture" class="primary">Capture &amp; Copy</button>
+  <button id="preview" class="ghost">Preview</button>
+
+  <pre id="result" class="result" hidden></pre>
+  <p id="status" class="status"></p>
+
+  <script src="capture.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

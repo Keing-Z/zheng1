@@ -1,0 +1,58 @@
+<view class="page">
+  <!-- 月份切换 -->
+  <view class="monthbar">
+    <view class="nav" bindtap="onPrev">‹</view>
+    <view class="m-inner">
+      <text class="m-label">{{curLabel}}</text>
+      <text class="m-sub">支出 ¥{{monthTotalText}} · {{monthCount}} 笔</text>
+    </view>
+    <view class="nav {{isFuture ? 'disabled' : ''}}" bindtap="onNext">›</view>
+  </view>
+
+  <!-- 分类筛选 -->
+  <scroll-view scroll-x class="filter" enable-flex>
+    <view class="fchip {{filterCat === '' ? 'on' : ''}}" data-id="" bindtap="onFilter">全部</view>
+    <view
+      wx:for="{{cats}}"
+      wx:key="id"
+      class="fchip {{filterCat === item.id ? 'on' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="onFilter"
+    >{{item.emoji}} {{item.name}}</view>
+  </scroll-view>
+
+  <!-- 按日分组列表 -->
+  <view class="list">
+    <view wx:for="{{groups}}" wx:key="date" class="day">
+      <view class="day-head">
+        <text class="day-label">{{item.dayLabel}}</text>
+        <text class="day-total">-¥{{item.totalText}}</text>
+      </view>
+
+      <view
+        wx:for="{{item.items}}"
+        wx:for-item="rec"
+        wx:key="id"
+        class="rec"
+        data-id="{{rec.id}}"
+        bindlongpress="onDelete"
+      >
+        <view class="rec-ico" style="background:{{rec.color}}">{{rec.emoji}}</view>
+        <view class="rec-main">
+          <view class="rec-top">
+            <text class="rec-cat">{{rec.catName}}</text>
+            <text class="rec-amt">-¥{{rec.amountText}}</text>
+          </view>
+          <text wx:if="{{rec.note}}" class="rec-note">{{rec.note}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{groups.length === 0}}" class="empty">
+      <text class="em">🗒️</text>
+      <text>{{filterCat ? '这个分类还没有记录' : '本月还没有记账'}}</text>
+    </view>
+  </view>
+
+  <view class="tip">长按某条记录可删除</view>
+</view>

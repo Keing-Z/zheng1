@@ -1,0 +1,82 @@
+<view class="page">
+  <!-- 月份 -->
+  <view class="monthbar">
+    <view class="nav" bindtap="onPrev">‹</view>
+    <view class="m-inner">
+      <text class="m-label">{{curLabel}}</text>
+      <text class="m-sub">共 {{count}} 笔 · 日均 ¥{{avgText}}</text>
+    </view>
+    <view class="nav {{isFuture ? 'disabled' : ''}}" bindtap="onNext">›</view>
+  </view>
+
+  <!-- 总额 + 环形图 -->
+  <view class="card hero">
+    <view class="hero-left">
+      <text class="muted">本月总支出</text>
+      <text class="hero-num">¥{{totalText}}</text>
+      <text class="muted">日均 ¥{{avgText}}</text>
+    </view>
+    <view class="donut-wrap" wx:if="{{total > 0}}">
+      <view class="donut" style="background: {{donutCss}}">
+        <view class="donut-hole">
+          <text class="dh-num">{{byCat.length}}</text>
+          <text class="dh-label">个分类</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="donut-wrap">
+      <view class="donut empty-donut"><view class="donut-hole"><text class="dh-label">暂无</text></view></view>
+    </view>
+  </view>
+
+  <!-- 分类排行 -->
+  <view class="card">
+    <view class="between" style="margin-bottom: 20rpx">
+      <text class="title">花在哪了</text>
+      <text class="muted">占比</text>
+    </view>
+
+    <view wx:for="{{byCat}}" wx:key="catId" class="rank">
+      <view class="rk-head">
+        <view class="rk-left">
+          <text class="rk-emoji">{{item.emoji}}</text>
+          <text class="rk-name">{{item.name}}</text>
+          <text class="rk-count">{{item.count}}笔</text>
+        </view>
+        <view class="rk-right">
+          <text class="rk-amt">¥{{item.amountText}}</text>
+          <text class="rk-pct">{{item.pct}}%</text>
+        </view>
+      </view>
+      <view class="rk-bar">
+        <view class="rk-in" style="width:{{item.pct}}%; background:{{item.color}}"></view>
+      </view>
+    </view>
+
+    <view wx:if="{{byCat.length === 0}}" class="empty" style="padding:40rpx 0">
+      <text class="em">📊</text>
+      <text>本月还没有数据</text>
+    </view>
+  </view>
+
+  <!-- 月度趋势 -->
+  <view class="card">
+    <view class="between" style="margin-bottom: 24rpx">
+      <text class="title">近 6 个月趋势</text>
+      <text class="muted">最高 ¥{{maxText}}</text>
+    </view>
+
+    <view class="bars">
+      <view wx:for="{{trend}}" wx:key="label" class="bar-col">
+        <text class="bar-val">{{item.short}}</text>
+        <view class="bar-track">
+          <view
+            class="bar-fill {{item.m === curM ? 'cur' : ''}}"
+            style="height:{{item.h}}%"
+          ></view>
+        </view>
+        <text class="bar-label {{item.m === curM ? 'cur' : ''}}">{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+</view>

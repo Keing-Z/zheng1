@@ -1,0 +1,78 @@
+.page { min-height: 100vh; padding-bottom: 40rpx; }
+
+/* 月份 */
+.monthbar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 24rpx 32rpx;
+  border-bottom: 2rpx solid #f0f1f6;
+}
+.nav {
+  width: 72rpx; height: 72rpx; border-radius: 20rpx;
+  background: #f5f6fa; display: flex; align-items: center; justify-content: center;
+  font-size: 40rpx; color: #4f46e5;
+}
+.nav.disabled { opacity: 0.3; }
+.m-inner { flex: 1; text-align: center; display: flex; flex-direction: column; }
+.m-label { font-size: 32rpx; font-weight: 700; }
+.m-sub { font-size: 22rpx; color: #9aa0b4; margin-top: 2rpx; }
+
+.card { margin: 24rpx; }
+
+/* 英雄卡 */
+.hero { display: flex; align-items: center; justify-content: space-between; }
+.hero-left { display: flex; flex-direction: column; }
+.hero-num { font-size: 60rpx; font-weight: 800; margin: 8rpx 0; letter-spacing: -1rpx; }
+
+/* 环形图 */
+.donut-wrap { width: 220rpx; height: 220rpx; flex-shrink: 0; }
+.donut {
+  width: 220rpx; height: 220rpx; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.empty-donut { background: #eef0f6; }
+.donut-hole {
+  width: 140rpx; height: 140rpx; border-radius: 50%; background: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.dh-num { font-size: 40rpx; font-weight: 800; }
+.dh-label { font-size: 20rpx; color: #9aa0b4; }
+
+/* 分类排行 */
+.rank { margin-bottom: 26rpx; }
+.rank:last-child { margin-bottom: 0; }
+.rk-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10rpx; }
+.rk-left { display: flex; align-items: baseline; }
+.rk-emoji { font-size: 30rpx; margin-right: 8rpx; }
+.rk-name { font-size: 28rpx; font-weight: 600; }
+.rk-count { font-size: 22rpx; color: #b6bacb; margin-left: 10rpx; }
+.rk-right { display: flex; align-items: baseline; }
+.rk-amt { font-size: 28rpx; font-weight: 700; }
+.rk-pct { font-size: 22rpx; color: #9aa0b4; margin-left: 10rpx; width: 76rpx; text-align: right; }
+.rk-bar { height: 14rpx; border-radius: 99rpx; background: #f2f3f8; overflow: hidden; }
+.rk-in { height: 100%; border-radius: 99rpx; transition: width 0.4s; }
+
+/* 柱状趋势 */
+.bars { display: flex; align-items: flex-end; justify-content: space-between; height: 320rpx; }
+.bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; }
+.bar-val { font-size: 20rpx; color: #9aa0b4; margin-bottom: 8rpx; }
+.bar-track {
+  flex: 1;
+  width: 56rpx;
+  display: flex;
+  align-items: flex-end;
+  background: #f7f8fc;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+.bar-fill {
+  width: 100%;
+  background: #c7c9f5;
+  border-radius: 12rpx 12rpx 0 0;
+  min-height: 4rpx;
+  transition: height 0.4s;
+}
+.bar-fill.cur { background: #4f46e5; }
+.bar-label { font-size: 22rpx; color: #9aa0b4; margin-top: 10rpx; }
+.bar-label.cur { color: #4f46e5; font-weight: 700; }

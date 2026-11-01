@@ -1,0 +1,74 @@
+.page { min-height: 100vh; padding: 24rpx 24rpx 60rpx; }
+.card { margin: 0 0 24rpx; }
+.block { display: block; }
+
+/* 连续记账 */
+.streak-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 28rpx;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  color: #fff;
+  box-shadow: 0 16rpx 40rpx rgba(99, 102, 241, 0.3);
+}
+.sc-left { display: flex; align-items: baseline; margin-right: 28rpx; }
+.sc-num { font-size: 88rpx; font-weight: 800; line-height: 1; }
+.sc-unit { font-size: 28rpx; margin-left: 6rpx; opacity: 0.9; }
+.sc-right { display: flex; flex-direction: column; }
+.sc-title { font-size: 30rpx; font-weight: 700; }
+.sc-sub { font-size: 24rpx; opacity: 0.9; margin-top: 8rpx; }
+
+/* 预算 */
+.budget-input-row {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  background: #fafbfe;
+  border: 2rpx solid #eef0f6;
+  border-radius: 20rpx;
+  padding: 8rpx 8rpx 8rpx 24rpx;
+}
+.bi-cur { font-size: 32rpx; font-weight: 700; margin-right: 8rpx; }
+.bi-input { flex: 1; font-size: 30rpx; }
+.bi-ph { color: #b6bacb; font-size: 26rpx; }
+.bi-save {
+  background: #4f46e5;
+  color: #fff;
+  font-size: 26rpx;
+  padding: 16rpx 32rpx;
+  border-radius: 16rpx;
+  font-weight: 600;
+}
+
+.bstat { margin-top: 20rpx; font-size: 24rpx; color: #4f46e5; }
+.bstat.warn { color: #c77700; }
+.bstat.over { color: #e5484d; }
+.bstat-pct { font-weight: 700; }
+.bar {
+  height: 12rpx;
+  border-radius: 99rpx;
+  background: rgba(0, 0, 0, 0.07);
+  margin: 12rpx 0;
+  overflow: hidden;
+}
+.bar-in { height: 100%; background: currentColor; border-radius: 99rpx; }
+.bstat-warn { font-size: 24rpx; font-weight: 600; }
+
+/* 成就 */
+.ach { display: flex; align-items: center; margin-bottom: 24rpx; opacity: 0.55; }
+.ach.on { opacity: 1; }
+.ach:last-child { margin-bottom: 0; }
+.ach-ico { font-size: 40rpx; width: 64rpx; flex-shrink: 0; }
+.ach-main { flex: 1; }
+.ach-title { font-size: 28rpx; font-weight: 600; }
+.ach-cur { font-size: 22rpx; color: #9aa0b4; }
+.ach-bar { height: 10rpx; border-radius: 99rpx; background: #f2f3f8; margin-top: 10rpx; overflow: hidden; }
+.ach-in { height: 100%; border-radius: 99rpx; background: #c7c9f5; transition: width 0.4s; }
+.ach.on .ach-in { background: #4f46e5; }
+
+/* 按钮 */
+.btns { display: flex; gap: 20rpx; }
+.bt { flex: 1; }
+.foot { text-align: center; font-size: 22rpx; color: #b6bacb; margin-top: 30rpx; }

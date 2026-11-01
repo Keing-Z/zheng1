@@ -1,0 +1,90 @@
+<view class="page">
+
+  <!-- 本月概览条 -->
+  <view class="overview">
+    <view class="ov-item">
+      <text class="ov-label">本月支出</text>
+      <text class="ov-value">¥{{monthTotalText}}</text>
+    </view>
+    <view class="ov-item">
+      <text class="ov-label">今天的账</text>
+      <text class="ov-value">{{todayCount}} 笔</text>
+    </view>
+    <view class="ov-item">
+      <text class="ov-label">连续记账</text>
+      <text class="ov-value">{{streakDays}} 天</text>
+    </view>
+  </view>
+
+  <!-- 预算提示条 -->
+  <view wx:if="{{budget.level !== 'none'}}" class="budget-bar {{budget.level}}">
+    <view class="budget-line">
+      <text wx:if="{{budget.level === 'over'}}">⚠️ 已超预算 ¥{{overText}}</text>
+      <text wx:elif="{{budget.level === 'warn'}}">接近预算：已用 {{budget.pct}}%</text>
+      <text wx:else>本月预算剩余 ¥{{remainText}}</text>
+    </view>
+    <view class="bar"><view class="bar-in" style="width:{{barWidth}}%"></view></view>
+  </view>
+
+  <!-- 金额显示 -->
+  <view class="amount-box">
+    <text class="cur">¥</text>
+    <text class="amount {{displayAmount === '0' ? 'placeholder' : ''}}">{{displayAmount}}</text>
+  </view>
+
+  <!-- 备注 -->
+  <view class="note-box">
+    <input
+      class="note-input"
+      placeholder="加个备注（可选，3 秒记完不填也行）"
+      placeholder-class="note-ph"
+      value="{{note}}"
+      maxlength="40"
+      bindinput="onNoteInput"
+      confirm-type="done"
+    />
+  </view>
+
+  <!-- 分类 -->
+  <scroll-view scroll-y class="cats" enable-flex>
+    <view class="cat-grid">
+      <view
+        wx:for="{{cats}}"
+        wx:key="id"
+        class="cat {{item.id === catId ? 'on' : ''}}"
+        style="{{item.id === catId ? 'background:' + item.color + ';color:#fff' : ''}}"
+        data-id="{{item.id}}"
+        bindtap="onPickCat"
+      >
+        <text class="cat-em">{{item.emoji}}</text>
+        <text class="cat-name">{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 数字键盘 -->
+  <view class="keypad">
+    <view class="keys">
+      <view class="key" data-k="1" bindtap="onKey">1</view>
+      <view class="key" data-k="2" bindtap="onKey">2</view>
+      <view class="key" data-k="3" bindtap="onKey">3</view>
+      <view class="key fn" data-k="del" bindtap="onKey">⌫</view>
+
+      <view class="key" data-k="4" bindtap="onKey">4</view>
+      <view class="key" data-k="5" bindtap="onKey">5</view>
+      <view class="key" data-k="6" bindtap="onKey">6</view>
+      <view class="key fn" data-k="clear" bindtap="onKey">C</view>
+
+      <view class="key" data-k="7" bindtap="onKey">7</view>
+      <view class="key" data-k="8" bindtap="onKey">8</view>
+      <view class="key" data-k="9" bindtap="onKey">9</view>
+      <view class="key ok" bindtap="onSave">保存</view>
+
+      <view class="key zero" data-k="0" bindtap="onKey">0</view>
+      <view class="key" data-k="." bindtap="onKey">.</view>
+    </view>
+  </view>
+
+  <!-- 保存成功的轻提示 -->
+  <view class="saved-toast {{savedTip ? 'show' : ''}}">✓ 已记录</view>
+</view>
