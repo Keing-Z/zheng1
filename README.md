@@ -95,5 +95,8 @@ No network permissions. The extension never uploads anything.
 - GitHub: [@your-handle](https://github.com/your-handle)
 - Email: [your@email.com]
 
-*English translations of each project README are included alongside the Chinese originals
-where applicable.*
+---
+
+<sub>The `docs/` folder holds application materials (resume) and, in Chinese, the walkthrough
+used to publish this repository. English translations of each project README are included
+alongside the Chinese originals where applicable.</sub>
