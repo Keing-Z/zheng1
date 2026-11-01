@@ -1,4 +1,4 @@
-# Hi, I'm [Your Name] — Data Science & Automation
+﻿# Hi, I'm [Your Name] — Data Science & Automation
 
 Undergraduate in **Data Science and Big Data Technology** at Fujian Agriculture and Forestry
 University (top 20% of major). I build things end-to-end: from data collection and cleaning
@@ -21,7 +21,7 @@ rather than reporting that as a win, the README explains *why* — the `odor` fe
 carries mutual information of 1.0 — and moves the analysis to where it is actually
 informative. Includes an interactive Chart.js dashboard.
 
-`772-line pipeline · 6 models · 11 figures · full written report`
+`706-line pipeline · 6 models · 11 figures · full written report`
 
 ---
 

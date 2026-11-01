@@ -1,4 +1,4 @@
-# TalentsAI 资质申请材料
+﻿# TalentsAI 资质申请材料
 
 > 对应你截图里的四个输入项。带 `[方括号]` 的只有你的姓名和 GitHub 用户名需要替换。
 
@@ -56,7 +56,7 @@ https://github.com/[你的GitHub用户名]/portfolio
 ```
 一、关于代码仓库
 仓库为公开仓库，包含四个完整项目的源代码、测试与文档：
-· mushroom-classification：机器学习全流程，含 772 行分析脚本、模型对比结果、特征重要性三种方法对比、11 张可视化图表与交互式看板
+· mushroom-classification：机器学习全流程，含 706 行分析脚本、模型对比结果、特征重要性三种方法对比、11 张可视化图表与交互式看板
 · expense-tracker-miniapp：微信小程序，含 82 项自动化断言（单元 / 集成 / 静态三层）
 · web-scraper：仅用 Python 标准库实现的采集工具，含 26 项单元测试
 · quick-capture-extension：Manifest V3 浏览器扩展，含 14 项单元测试

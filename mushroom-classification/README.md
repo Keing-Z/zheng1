@@ -1,4 +1,4 @@
-# Mushroom Toxicity Classification — End-to-End Data Science Project
+﻿# Mushroom Toxicity Classification — End-to-End Data Science Project
 
 A complete machine-learning workflow on the UCI Mushroom dataset: exploratory analysis,
 multi-method feature-importance comparison, six-model benchmarking, and an interactive
@@ -67,7 +67,7 @@ data — is the part of the project I would emphasise in a review.
 ```
 mushroom-classification/
 ├── src/
-│   ├── mushroom_analysis.py        # Main pipeline (772 lines, 9 methods)
+│   ├── mushroom_analysis.py        # Main pipeline (706 lines, 9 methods)
 │   ├── data_entry.py               # Dataset acquisition / conversion
 │   └── fix_feature_importance.py   # Feature-importance comparison utility
 ├── data/
