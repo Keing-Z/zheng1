@@ -1,5 +1,7 @@
 # Expense Tracker — WeChat Mini Program
 
+*中文说明见 [README.zh-CN.md](./README.zh-CN.md)*
+
 A mobile expense tracker designed around one constraint: **logging an expense must take
 under three seconds.**
 
@@ -45,6 +47,10 @@ roughly 30 KB of runtime dependency plus a repaint.
 **Offline-first, no backend.** No account, no server, no cost, and no user data leaving
 the device. Backup is an explicit JSON export rather than silent cloud sync.
 
+**Clipboard use is disclosed before it happens.** Exporting writes to the clipboard, which
+is a privacy-sensitive API. The app explains what will be copied and waits for
+confirmation, and it never reads clipboard contents.
+
 ## Testing
 
 Three layers, **82 assertions**, all passing:
@@ -56,7 +62,7 @@ node test/static.test.js        #     — page registration, event bindings, tem
 ```
 
 The integration layer runs the real page logic against a mocked `wx` runtime, so keypad
-edge cases (double decimal points, arcade limits, backspace at zero), filtering, month
+edge cases (double decimal points, character limits, backspace at zero), filtering, month
 rollover, deletion and budget states are all exercised without a device.
 
 ### Defects the tests found and fixed
@@ -64,11 +70,16 @@ rollover, deletion and budget states are all exercised without a device.
 1. **CSV export dropped a whole column.** The header was built from the first row's keys, so
    if row 1 lacked a field that later rows had, that column vanished from the export. Fixed
    by taking the union of keys across all rows.
-2. **HTML text extraction returned children in reverse order.** The extractor concatenated
-   an element's own text before its children's, so `<div><b>X</b> Y</div>` produced `"Y X"`.
+2. **Text extraction returned children in reverse order.** The extractor concatenated an
+   element's own text before its children's, so `<div><b>X</b> Y</div>` produced `"Y X"`.
    Fixed by keeping text fragments and child nodes in a single document-ordered sequence.
 3. **Restoring a backup doubled the data.** Re-importing the same backup appended every
    record again. Fixed with ID-based de-duplication on merge.
+
+The tests also surfaced a date-boundary assumption of my own: assertions were built on
+`Date.now() - 86400000`, which silently crosses into the previous month on the 1st of any
+month. That was a test defect, not a product one — but it is exactly the kind of thing that
+produces false confidence if left unexamined.
 
 ## Structure
 
@@ -84,5 +95,13 @@ test/                            Unit, integration and static tests
 
 ## Running it
 
-Open the folder in WeChat DevTools and use a test AppID — no registration required to
+Open the folder in WeChat DevTools and use a test AppID — no registration is required to
 preview locally.
+
+## Known limitations
+
+- **Data lives on the device only.** Uninstalling the mini program or switching phones loses
+  it unless the user exports a backup first. Cloud sync would require a backend; that cost
+  was deliberately avoided for v1.
+- **Restore requires a manual copy step.** The mini program's storage is sandboxed, so
+  restoring means copying the backup text to the clipboard and importing from there.
