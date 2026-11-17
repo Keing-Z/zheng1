@@ -1,102 +1,33 @@
-﻿# Hi, I'm Keing — Data Science & Automation
+﻿# Keing — Data Science & Automation · 项目索引
 
-Undergraduate in **Data Science and Big Data Technology** at Fujian Agriculture and Forestry
-University (top 20% of major). I build things end-to-end: from data collection and cleaning
-to models, interfaces, and tests.
+福建农林大学 数据科学与大数据技术（专业前 20%）。从数据采集、清洗、建模，到界面、测试与文档，端到端独立完成。
 
-This repository collects four projects I have built. Each one is complete — running code,
-tests where applicable, and documentation of the design decisions behind it.
+四个项目已拆分为**独立仓库**，每个仓库都有自己的提交历史、`CHANGELOG`、语义化版本与 CI 流水线。
 
----
-
-## Projects
-
-### 1. [Mushroom Toxicity Classification](./mushroom-classification) — Python · scikit-learn
-End-to-end machine-learning workflow on the UCI Mushroom dataset: exploratory analysis,
-six-model benchmark under 5-fold cross-validation, and a three-method feature-importance
-comparison (Random Forest importance, chi-square, mutual information).
-
-**Why it's worth a look:** almost every model reaches 100% accuracy on this dataset, and
-rather than reporting that as a win, the README explains *why* — the `odor` feature alone
-carries mutual information of 1.0 — and moves the analysis to where it is actually
-informative. Includes an interactive Chart.js dashboard.
-
-`706-line pipeline · 6 models · 11 figures · full written report`
+| # | 项目 | 技术栈 | 亮点 | 仓库 |
+|---|---|---|---|---|
+| 1 | 蘑菇毒性分类 | Python · scikit-learn | 六模型对比 + 特征重要性三法交叉验证；主动解释「为何准确率都是 100%」 | [mushroom-classification](https://github.com/Keing-Z/mushroom-classification) |
+| 2 | 记账微信小程序 | JavaScript · 微信小程序 | 「记一笔 3 秒内」约束驱动设计；89 项断言 + 4 页静态检查 | [expense-tracker-miniapp](https://github.com/Keing-Z/expense-tracker-miniapp) |
+| 3 | 零依赖网页采集 | Python 标准库 | 不用 requests/BeautifulSoup，自研 DOM 与选择器子集；26 项测试 | [web-scraper](https://github.com/Keing-Z/web-scraper) |
+| 4 | 快速采集扩展 | Manifest V3 | 捕获逻辑与 Chrome API 解耦，可在 Node 里单测；14 项测试 | [quick-capture-extension](https://github.com/Keing-Z/quick-capture-extension) |
 
 ---
 
-### 2. [Expense Tracker Mini Program](./expense-tracker-miniapp) — JavaScript · WeChat
-A mobile expense tracker built around a single constraint: **logging an expense must take
-under three seconds**. Every design choice follows from that — a custom numeric keypad
-instead of the system keyboard, auto-clearing after save, note field optional.
+## 我关心的三件事
 
-Offline-first, no backend, no account, no server cost. Amounts stored as integer cents to
-avoid floating-point drift; dates assembled in local time to avoid UTC offset bugs.
-
-`4 pages · 82 automated assertions across unit, integration and static layers`
-
-Three real defects were found by those tests and fixed — a CSV column being silently
-dropped, HTML text extraction returning children in the wrong order, and backup restore
-duplicating records. Each is documented in the project README.
+- **说清楚"为什么"**：一个设计决策如果没有写清放弃了什么，那就只是猜测。每个仓库的 README 都写了选了什么、放弃了什么、下一步会改什么。
+- **测试要找真 bug**：记账小程序里被测试抓出来的三个缺陷（CSV 丢列、文本顺序反转、备份恢复数据翻倍）都不是理论问题，都是用户会撞上的。
+- **诚实报告**：结果不好看、限制没解决，就写下来。见蘑菇项目里对 100% 准确率的解释。
 
 ---
 
-### 3. [Web Scraper](./web-scraper) — Python (standard library only)
-Turns a paginated listing page into clean CSV. **Zero third-party dependencies** — built on
-`urllib` and `html.parser` alone, because in real client environments `pip install`
-frequently fails behind proxies or with conflicting versions.
+## 申请材料
 
-Implements a lightweight DOM tree, a CSS-selector subset (`tag`, `.class`, `#id`,
-`[attr=value]`, descendant combinators), field mapping, retry with backoff, rate limiting,
-and UTF-8 BOM output so Excel opens the result without mojibake.
-
-`26 unit tests · end-to-end verified`
+`docs/` 目录存放资质申请材料（简历、补充说明、上传教程）。
 
 ---
 
-### 4. [Quick Capture — Chrome Extension](./quick-capture-extension) — Manifest V3
-One click to capture structured data from the current page as text, JSON, or CSV. Built
-with a deliberate split: all capture and formatting logic lives in a module with no Chrome
-API dependency, so it is unit-testable in Node without launching a browser.
-
-No network permissions. The extension never uploads anything.
-
-`14 unit tests`
-
----
-
-## What I care about
-
-- **Explaining the "why".** A design decision without a stated trade-off is a guess.
-  Every project README here says what was chosen, what was given up, and what I would
-  change next.
-- **Tests that find real bugs.** The three defects fixed in the expense tracker were not
-  theoretical — they were caught by assertions I wrote, and each one had already broken
-  something that a user would have noticed.
-- **Honest reporting.** Where a result is unimpressive or a limitation is known, it is
-  written down rather than omitted. See the mushroom project's accuracy discussion and the
-  label-encoding limitation noted in the same README.
-
----
-
-## Skills
-
-| Area | Tools |
-|---|---|
-| Languages | Python, JavaScript, HTML/CSS, SQL |
-| Data science | pandas, NumPy, scikit-learn, Matplotlib, Seaborn |
-| Web & UI | Vanilla JS, Chrome Extension APIs, WeChat Mini Program, Chart.js |
-| Practice | Git, automated testing, technical writing (Chinese and English) |
-
----
-
-## Contact
+## 联系方式
 
 - GitHub: [@Keing-Z](https://github.com/Keing-Z)
 - Email: 2776599149@qq.com
-
----
-
-<sub>The `docs/` folder holds application materials (resume) and, in Chinese, the walkthrough
-used to publish this repository. English translations of each project README are included
-alongside the Chinese originals where applicable.</sub>
